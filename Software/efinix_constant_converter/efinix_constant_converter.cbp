@@ -38,7 +38,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="md5.h" />
-		<Unit filename="strptime.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
