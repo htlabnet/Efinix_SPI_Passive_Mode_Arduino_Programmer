@@ -4,6 +4,9 @@ Efinix社のFPGA「Trion T8」をSPIパッシブモードで使用するため�
 
 「T8Q144I4」＋「Seeed Studio XIAO ESP32C3」テスト済み。
 
+https://htlab.net/electronics/pld/trion-fpga-windows11-tutorial/
+
+その他の情報はこちら
 
 
 ## Software
@@ -16,9 +19,17 @@ Efinix社のFPGA「Trion T8」をSPIパッシブモードで使用するため�
 
 ### Code::Blocks ビルド環境構築
 
+C/C++開発環境として Code::Blocks を導入する。
+
 http://www.codeblocks.org/downloads/binaries/
 
-「codeblocks-20.03mingw-setup.exe」使用。
+「codeblocks-20.03mingw-setup.exe」を使用。
+
+コンパイラ（MinGW）が同封されているもので、これさえインストールすればC/C++の開発環境が整う。
+
+TDM-GCCやMSVC等、別のコンパイラを使用する場合などでは、Code::Blocks単体のインストールでもOK。
+
+なお「codeblocks-20.03mingw-setup.exe」に同封されているgccはバージョン8.1.0だった。
 
 
 
@@ -110,7 +121,7 @@ Seeed Studio XIAO ESP32C3 使用。
 | D3 | CRESET_N (OUTPUT, MCU->FPGA) |
 | D8 | CCK  (SPI,SCK,OUTPUT, MCU->FPGA) |
 | D9 |  *   (SPI,MISO,INPUT) |
-| D10 | CDI0 (SPI,MOSI,OUTPUT) |
+| D10 | CDI0 (SPI,MOSI,OUTPUT, MCU->FPGA) |
 
 SPIを使用するため、D9（MISO）が入力になる。
 
@@ -188,6 +199,8 @@ Passive mode X1の場合の最大周波数は25MHzのため、25MHzまでで動�
 
 
 ### 参考資料
+
+ - [HTLAB.NET - Trion FPGA Windows11チュートリアル](https://htlab.net/electronics/pld/trion-fpga-windows11-tutorial/)
 
  - [T8 Data Sheet v4.7](https://www.efinixinc.com/docs/trion8-ds-v4.7.pdf)
  - [AN 006: Configuring Trion FPGAs v5.6](https://www.efinixinc.com/docs/an006-configuring-trion-fpgas-v5.6.pdf)
